@@ -10,11 +10,16 @@ public class NPC_Character : MonoBehaviour
     // current way to determine shapes
     [SerializeField] private int shapeSet;
     [SerializeField] private int setElement;
-
+    public Sprite shapeAttribute;
+    [SerializeField] private GameObject attributeUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (shapeAttribute != null) {
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            attributeUI.GetComponent<SpriteRenderer>().sprite = shapeAttribute;
+        }
     }
 
     // Update is called once per frame
