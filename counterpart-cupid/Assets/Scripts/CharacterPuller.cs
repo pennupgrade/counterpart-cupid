@@ -7,8 +7,10 @@ public class CharacterPuller : MonoBehaviour
     public Transform holdPosition;      // Where the character will be held
     public KeyCode pullKey = KeyCode.E; // Key to pull the character
 
-    private GameObject heldCharacter = null;
-    private bool isPulling = false;
+    // bad practice to make it completely public
+    // but this is for a game jam so it's ok if it's bad
+    public GameObject heldCharacter = null;
+    public bool isPulling = false;
 
     void Update()
     {
