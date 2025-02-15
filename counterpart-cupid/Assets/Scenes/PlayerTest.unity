@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: setElement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+      propertyPath: shapeAttribute
+      value: 
+      objectReference: {fileID: 21300000, guid: cf056ad388eeae84b96c54d3abdc7f41, type: 3}
     - target: {fileID: 4515486853757078160, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
       propertyPath: m_Name
       value: NPC_Character
@@ -905,6 +909,10 @@ PrefabInstance:
       propertyPath: shapeSet
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+      propertyPath: shapeAttribute
+      value: 
+      objectReference: {fileID: 21300000, guid: d4241ca0dc7ba6e4a8f464c0098488ac, type: 3}
     - target: {fileID: 4515486853757078160, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
       propertyPath: m_Name
       value: NPC_Character (2)
