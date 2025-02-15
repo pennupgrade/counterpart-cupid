@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 898961418306130508}
   - component: {fileID: 2227386684455757788}
   - component: {fileID: 1429106185069782979}
+  - component: {fileID: 3662746940871802868}
   m_Layer: 3
   m_Name: NPC_Character
   m_TagString: Character
@@ -396,3 +397,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fcc264660266a4f9143133948e2bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3662746940871802868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515486853757078160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f7454c856a585478c4d49361ed1b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRange: 10
+  wanderSpeed: 2
+  waitTime: 10
+  rotationSpeed: 2
