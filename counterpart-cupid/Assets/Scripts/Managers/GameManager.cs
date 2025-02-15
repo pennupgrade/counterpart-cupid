@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     void Awake() {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
@@ -40,11 +42,15 @@ public class GameManager : MonoBehaviour
     }
 
     void Lose() {
-        // GAME OVER
+        SceneManager.LoadSceneAsync("GameOverScreen");
     }
 
     public static void AddScore(int scoreAddition) {
         Instance.score += scoreAddition;
         Instance.UpdateScore();
+    }
+
+    public static int GetScore() {
+        return Instance.score;
     }
 }
