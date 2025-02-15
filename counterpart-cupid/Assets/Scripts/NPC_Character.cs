@@ -32,7 +32,7 @@ public class NPC_Character : MonoBehaviour
         if (other is not null && DoesMatch(other)) {
             // if it's a match -- 
             // TODO: add points or whatever
-            print("Matched!");
+            GameManager.AddScore(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
