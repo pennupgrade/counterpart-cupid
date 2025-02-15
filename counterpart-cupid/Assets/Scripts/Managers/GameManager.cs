@@ -32,10 +32,12 @@ public class GameManager : MonoBehaviour
     }
 
     void UpdateTimer() {
+        print(timer);
         // TODO: UPDATE TIMER UI
     }
 
     void UpdateScore() {
+        print(score);
         // TODO: UPDATE SCORE UI
     }
 
