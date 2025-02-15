@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3686026735860446134}
   - component: {fileID: 1598199712535296324}
   - component: {fileID: 5281884093894451013}
+  - component: {fileID: 1365275354746122891}
   m_Layer: 3
   m_Name: Sphere_NPC
   m_TagString: Character
@@ -152,3 +153,17 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1365275354746122891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407250357654848944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b785dcf4484b44ed0a228c55ec438dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeSet: 0
+  setElement: 0
