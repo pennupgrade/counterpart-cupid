@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     // tracking seen attributes
     private List<NPC_Character> activeCharacters = new List<NPC_Character>(); // Track NPCs
-    private Dictionary<int, List<NPC_Character>> attributeGroups = new Dictionary<int, List<NPC_Character>>();
     private Dictionary<int, List<Sprite>> attributeSymbols = new Dictionary<int, List<Sprite>>();
     [SerializeField] private Sprite[] rawSymbols;
 
@@ -40,12 +39,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < rawSymbols.Length - 1; i += 2)
         {
             attributeSymbols.Add(i / 2, new List<Sprite> { rawSymbols[i], rawSymbols[i + 1] });
-        }
-
-        // populate attriButeGroups
-        for (int i = 0; i < attributeSymbols.Count; i++)
-        {
-            attributeGroups.Add(i, new List<NPC_Character>());
         }
     }
 
@@ -98,7 +91,7 @@ public class GameManager : MonoBehaviour
         // assuming only increment 1 score at a time
         Instance.score += scoreAddition;
         Instance.UpdateScore();
-        Instance.timer += 2f;
+        Instance.timer += 5f;
         Instance.SpawnNewCharacters();
     }
 
@@ -109,6 +102,17 @@ public class GameManager : MonoBehaviour
 
     void SpawnNewCharacters()
     {
+        // remove inactive ones
+        for (int i = activeCharacters.Count - 1; i >= 0; i--)
+        {
+            if (!activeCharacters[i])
+                activeCharacters.RemoveAt(i); // Remove the GameObject from the list
+        }
+
+        if (activeCharacters.Count > 12) {
+            return;
+        }
+
         // spawn 1 kiddo
         (int, int) set = GetExistingOrNewShapeSet();
         SpawnNPC(RandomSpawnPos(), set.Item1, set.Item2, attributeSymbols[set.Item1][set.Item2]);
@@ -127,20 +131,24 @@ public class GameManager : MonoBehaviour
 
         foreach (NPC_Character npc in activeCharacters)
         {
+            // add (shapeset, curr existing element) into dict
             if (!shapeCounts.ContainsKey(npc.shapeSet))
-                shapeCounts[npc.shapeSet] = 0;
-
-            shapeCounts[npc.shapeSet]++;
+                shapeCounts[npc.shapeSet] = npc.setElement;
+            else
+            {
+                // exists a complement for that shapeset
+                if (npc.setElement != shapeCounts[npc.shapeSet])
+                    shapeCounts.Remove(npc.shapeSet);
+            }
         }
         // print(string.Join(Environment.NewLine, shapeCounts));
 
-        foreach (var pair in shapeCounts)
+        foreach (var single in shapeCounts)
         {
-            if (pair.Value == 1) // Found an incomplete pair
-                return (pair.Key, 1);
+            return (single.Key, shapeCounts[single.Key] == 1 ? 0 : 1);
         }
 
-        return (Random.Range(0, attributeSymbols.Count), 0);
+        return (Random.value > 0.5f) ? (Random.Range(0, attributeSymbols.Count), 0) : (Random.Range(0, attributeSymbols.Count), 1);
     }
 
     void SpawnNPC(Vector3 position, int shapeSet, int setElement, Sprite shapeSprite)
