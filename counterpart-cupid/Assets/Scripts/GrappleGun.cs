@@ -35,7 +35,6 @@ public class GrappleGun : MonoBehaviour
     }
 
     void Grab() {
-        print("G");
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
