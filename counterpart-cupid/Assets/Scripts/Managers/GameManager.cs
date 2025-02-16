@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Spawning & Room Info")]
     public NPC_Character NPCPrefab;
     [SerializeField] private GameObject[] NPCPrefabs;
+    [SerializeField] private int maxCapacity = 16;
     public Vector3 fieldMinPos;
     public Vector3 fieldMaxPos;
 
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
         // assuming only increment 1 score at a time
         Instance.score += scoreAddition;
         Instance.UpdateScore();
-        Instance.timer += 5f;
+        Instance.timer += (100f / Instance.timer);
         Instance.SpawnNewCharacters();
     }
 
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
                 activeCharacters.RemoveAt(i); // Remove the GameObject from the list
         }
 
-        if (activeCharacters.Count > 12) {
+        if (activeCharacters.Count >= maxCapacity) {
             return;
         }
 

@@ -9,6 +9,7 @@ public class CharacterPush : MonoBehaviour
     public LayerMask characterLayer;    // To filter only character objects
 
     private CharacterPuller characterPuller;
+    private float spinForce = 5f;
 
     void Start()
     {
@@ -55,13 +56,19 @@ public class CharacterPush : MonoBehaviour
             // Calculate direction from held character to target
             Vector3 pushDirection = (target.transform.position - heldCharacter.transform.position).normalized;
             rb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+
+            // Apply spin/rotation
+            // Vector3 randomSpin = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)); // Random spin axis
+            Vector3 randomSpin = new Vector3(0, 1, 0);
+            rb.AddTorque(randomSpin * spinForce, ForceMode.Impulse);
         }
 
         // Clear the held character
         characterPuller.heldCharacter = null;
         characterPuller.isPulling = false;
     }
-    
+
+
     IEnumerator WaitToWander(GameObject prevHeldCharacter)
     {
         yield return new WaitForSeconds(3);
