@@ -42,7 +42,6 @@ public class NPC_Character : MonoBehaviour
         {
             // if it's a match -- 
             // TODO: add points or whatever
-            GameManager.AddScore(1);
             StartCoroutine(Matched(other));
         }
     }
@@ -74,6 +73,7 @@ public class NPC_Character : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         other.GetComponent<Rigidbody>().isKinematic = true;
         yield return new WaitForSeconds(2);
+        GameManager.AddScore(1);
         Destroy(gameObject);
         Destroy(other.gameObject);
     }

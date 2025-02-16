@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private TMP_Text ScoreText;
     [SerializeField] private TMP_Text TimerText;
+    public GameObject NPCPrefab;
+    public Vector3 fieldMinPos;
+    public Vector3 fieldMaxPos;
+
+    // -72.5, 72.5
 
 
     void Awake() {
@@ -59,11 +67,28 @@ public class GameManager : MonoBehaviour
     }
 
     public static void AddScore(int scoreAddition) {
+        // assuming only increment 1 score at a time
         Instance.score += scoreAddition;
         Instance.UpdateScore();
+        Instance.SpawnNPCs();
     }
 
     public static int GetScore() {
         return Instance.score;
+    }
+
+    void SpawnNPCs() {
+        // spawn 2 more kiddos
+        Instantiate(NPCPrefab, RandomSpawnPos(), UnityEngine.Quaternion.identity);
+        Instantiate(NPCPrefab, RandomSpawnPos(), UnityEngine.Quaternion.identity);
+    }
+
+    Vector3 RandomSpawnPos() {
+        Vector3 randomPosition = new(
+            Random.Range(fieldMinPos.x, fieldMaxPos.x),
+            Random.Range(fieldMinPos.y, fieldMaxPos.y),
+            Random.Range(fieldMinPos.z, fieldMaxPos.z)
+        );
+        return randomPosition;
     }
 }
