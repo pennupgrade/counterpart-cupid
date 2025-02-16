@@ -75,7 +75,7 @@ public class NPC_Character : MonoBehaviour
     IEnumerator Matched(NPC_Character other)
     {
         // start particles
-        this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        this.gameObject.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
         DisableNavMeshAgent();
         GetComponent<Rigidbody>().isKinematic = true;
         other.GetComponent<Rigidbody>().isKinematic = true;
