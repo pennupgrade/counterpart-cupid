@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
             Lose();
         }
         UpdateTimer();
-
     }
 
     void UpdateTimer()
@@ -99,6 +98,7 @@ public class GameManager : MonoBehaviour
         // assuming only increment 1 score at a time
         Instance.score += scoreAddition;
         Instance.UpdateScore();
+        Instance.timer += 2f;
         Instance.SpawnNewCharacters();
     }
 
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
 
             shapeCounts[npc.shapeSet]++;
         }
-        print(string.Join(Environment.NewLine, shapeCounts));
+        // print(string.Join(Environment.NewLine, shapeCounts));
 
         foreach (var pair in shapeCounts)
         {
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
         if (npc != null)
         {
-            print("spawned npc: pair #" + shapeSet + ", #" + setElement);
+            // print("spawned npc: pair #" + shapeSet + ", #" + setElement);
             npc.Initialize(shapeSet, setElement, shapeSprite);
             activeCharacters.Add(npc);
         }
