@@ -45,14 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f710eb9303ad9c1099855f2adb12317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 100
+  timer: 30
   ScoreText: {fileID: 244402565939389891}
   TimerText: {fileID: 4200552343394327786}
   NPCPrefab: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
   NPCPrefabs:
-  - {fileID: 8725332294601743821, guid: 97608e4666957584aa00cac94714f81d, type: 3}
-  - {fileID: 8725332294601743821, guid: 454250e1711df944db78422165f1633e, type: 3}
   - {fileID: 8725332294601743821, guid: 251056efa3abcc04cb14a781dae8e6bd, type: 3}
+  - {fileID: 8725332294601743821, guid: 97608e4666957584aa00cac94714f81d, type: 3}
+  - {fileID: 8725332294601743821, guid: 71a8f8a6a5408da408c50eac751b5cd5, type: 3}
+  - {fileID: 8725332294601743821, guid: b8eb6f5d2c5c80c4a88c571602b39ad9, type: 3}
+  - {fileID: 8725332294601743821, guid: 5aff50059419821428669438a2bf08bc, type: 3}
+  - {fileID: 8725332294601743821, guid: 6ede83eb7dc67a04eb329218c9e5129a, type: 3}
+  - {fileID: 8725332294601743821, guid: 454250e1711df944db78422165f1633e, type: 3}
   - {fileID: 8725332294601743821, guid: d131222827638d24b9d34850463bfe13, type: 3}
   maxCapacity: 16
   fieldMinPos: {x: -12, y: 3, z: -12}
