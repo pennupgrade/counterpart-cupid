@@ -210,6 +210,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 4350701580960914354, guid: fca0cd2c13c85f64fa2cd7079a92d44e, type: 3}
+    - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
       propertyPath: setElement
       value: 1
       objectReference: {fileID: 0}
@@ -968,6 +972,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 4350701580960914354, guid: fca0cd2c13c85f64fa2cd7079a92d44e, type: 3}
+    - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
       propertyPath: shapeAttribute
       value: 
       objectReference: {fileID: 21300000, guid: d4241ca0dc7ba6e4a8f464c0098488ac, type: 3}
@@ -1037,6 +1045,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 4350701580960914354, guid: fca0cd2c13c85f64fa2cd7079a92d44e, type: 3}
     - target: {fileID: 898961418306130508, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
       propertyPath: m_IsKinematic
       value: 0
