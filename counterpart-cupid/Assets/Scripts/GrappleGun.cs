@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GrappleGun : MonoBehaviour
 {
@@ -57,8 +58,22 @@ public class GrappleGun : MonoBehaviour
 
     void ReleaseChar() {
         heldChar.GetComponent<Rigidbody>().useGravity = true;
+        StartCoroutine(WaitToWander(heldChar.gameObject));
         heldChar = null;
         isHolding = false;
+    }
 
+    IEnumerator WaitToWander(GameObject prevHeldCharacter)
+    {
+        NavMeshHit h;
+        while (heldChar != prevHeldCharacter && !NavMesh.SamplePosition(prevHeldCharacter.transform.position, out h, 0.65f, NavMesh.AllAreas)) {
+            print("NOT FOUND");
+            yield return null;
+        }
+        if (heldChar != prevHeldCharacter)
+        {
+            // enable ai character
+            prevHeldCharacter.GetComponent<NPC_Character>().EnableNavMeshAgent();
+        }
     }
 }

@@ -85,7 +85,7 @@ public class CharacterPuller : MonoBehaviour
     IEnumerator WaitToWander(GameObject prevHeldCharacter)
     {
         yield return new WaitForSeconds(3);
-        if (!heldCharacter && heldCharacter != prevHeldCharacter)
+        if (heldCharacter != prevHeldCharacter)
         {
             // enable ai character
             prevHeldCharacter.GetComponent<NPC_Character>().EnableNavMeshAgent();
