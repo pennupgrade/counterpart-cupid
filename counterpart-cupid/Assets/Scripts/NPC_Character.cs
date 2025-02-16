@@ -8,11 +8,18 @@ public class NPC_Character : MonoBehaviour
 {
     // attributes
     // current way to determine shapes
-    [SerializeField] private int shapeSet;
-    [SerializeField] private int setElement;
+    public int shapeSet;
+    public int setElement;
     public Sprite shapeAttribute;
     [SerializeField] private GameObject attributeUI;
     private UnityEngine.AI.NavMeshAgent agent;
+
+    public void Initialize(int shapeSet, int setElement, Sprite shapeSprite)
+    {
+        this.shapeSet = shapeSet;
+        this.setElement = setElement;
+        this.shapeAttribute = shapeSprite;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +76,6 @@ public class NPC_Character : MonoBehaviour
     {
         // start particles
         this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-        print("particles");
         DisableNavMeshAgent();
         GetComponent<Rigidbody>().isKinematic = true;
         other.GetComponent<Rigidbody>().isKinematic = true;

@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &193226294
 Transform:
   m_ObjectHideFlags: 0
@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: timer
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: NPCPrefab
+      value: 
+      objectReference: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
     - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
       propertyPath: fieldMaxPos.x
       value: 12

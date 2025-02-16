@@ -48,9 +48,20 @@ MonoBehaviour:
   timer: 0
   ScoreText: {fileID: 244402565939389891}
   TimerText: {fileID: 4200552343394327786}
-  NPCPrefab: {fileID: 4515486853757078160, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+  NPCPrefab: {fileID: 650838112909023506, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
   fieldMinPos: {x: 0, y: 0, z: 0}
   fieldMaxPos: {x: 0, y: 0, z: 0}
+  rawSymbols:
+  - {fileID: 21300000, guid: 8eb12a29d190b69468d8a375e4be3b13, type: 3}
+  - {fileID: 21300000, guid: 41b057ebf8eeb784b9dcf7e55496a43a, type: 3}
+  - {fileID: 21300000, guid: b0a4bc2c0791b5c40a7b2bad308f425e, type: 3}
+  - {fileID: 21300000, guid: 82707339f8255f349b47de335284ff46, type: 3}
+  - {fileID: 21300000, guid: a330b49185f7140478c9eaa9684d5b8f, type: 3}
+  - {fileID: 21300000, guid: 357b39aecf9ce9b4ebe17b871de80e91, type: 3}
+  - {fileID: 21300000, guid: 3d516e2caa4a09c4d8ac8666ce7bd3c3, type: 3}
+  - {fileID: 21300000, guid: f961fdf3f765cd443a30c7f2d3ec8bf6, type: 3}
+  - {fileID: 21300000, guid: 8ac029a3213f3814fa6a4664702505cb, type: 3}
+  - {fileID: 21300000, guid: 0749809d04d28f04c953b443d3f6886f, type: 3}
 --- !u!1 &227964825496550113
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,10 +540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
