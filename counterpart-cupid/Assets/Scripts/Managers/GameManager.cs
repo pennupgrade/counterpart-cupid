@@ -78,9 +78,12 @@ public class GameManager : MonoBehaviour
     }
 
     void SpawnNPCs() {
-        // spawn 2 more kiddos
+        // spawn 1 kiddo
         Instantiate(NPCPrefab, RandomSpawnPos(), UnityEngine.Quaternion.identity);
-        Instantiate(NPCPrefab, RandomSpawnPos(), UnityEngine.Quaternion.identity);
+        // spawn 1 more with 50% chance
+        if (Random.Range(0,1) > 0.5f) {
+            Instantiate(NPCPrefab, RandomSpawnPos(), UnityEngine.Quaternion.identity);
+        }
     }
 
     Vector3 RandomSpawnPos() {
