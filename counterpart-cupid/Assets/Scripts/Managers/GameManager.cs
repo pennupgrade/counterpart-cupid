@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +12,9 @@ public class GameManager : MonoBehaviour
     private bool isDead = false;
     private int score = 0;
     [SerializeField] private float timer;
+    [SerializeField] private TMP_Text ScoreText;
+    [SerializeField] private TMP_Text TimerText;
+
 
     void Awake() {
         Instance = this;
@@ -38,10 +43,13 @@ public class GameManager : MonoBehaviour
     }
 
     void UpdateTimer() {
+        TimeSpan t = TimeSpan.FromSeconds(timer);
+        TimerText.text = t.ToString(@"mm\:ss\:ff");
         // TODO: UPDATE TIMER UI
     }
 
     void UpdateScore() {
+        ScoreText.text = "Score: " + score;
         // TODO: UPDATE SCORE UI
     }
 
