@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 1474326860}
   - component: {fileID: 1474326859}
   - component: {fileID: 1474326862}
+  - component: {fileID: 1474326863}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -609,7 +610,7 @@ RectTransform:
   m_GameObject: {fileID: 1474326857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.298948, y: 1.6427271, z: 1.1945}
+  m_LocalScale: {x: 1.723834, y: 2.481566, z: 1.5852209}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1782089222}
@@ -617,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -80}
+  m_AnchoredPosition: {x: -8, y: -8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474326859
@@ -664,16 +665,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1474326862}
-        m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 1
+      - m_Target: {fileID: 1474326863}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RestartGame
+          m_StringArgument: MenuScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1474326860
@@ -724,6 +725,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c49674debd3fe66cbb63682916cd103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1474326863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474326857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf5860164afdb449a08f2c6b09ce271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1782089221
@@ -993,7 +1006,7 @@ RectTransform:
   m_GameObject: {fileID: 2105115627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1767, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1941106933}
@@ -1016,15 +1029,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.3537736, b: 0.918643, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 02e5beabdd2b48646be6151c432d05b6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
