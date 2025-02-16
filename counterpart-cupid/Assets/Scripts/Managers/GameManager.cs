@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         // assuming only increment 1 score at a time
         Instance.score += scoreAddition;
         Instance.UpdateScore();
-        Instance.timer += (100f / Instance.timer);
+        Instance.timer += (Instance.timer > 25f) ? (100f / Instance.timer) : 4f;
         Instance.SpawnNewCharacters();
     }
 
