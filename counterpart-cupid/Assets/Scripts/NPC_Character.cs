@@ -18,7 +18,8 @@ public class NPC_Character : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        if (shapeAttribute != null) {
+        if (shapeAttribute != null)
+        {
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             attributeUI.GetComponent<SpriteRenderer>().sprite = shapeAttribute;
         }
@@ -29,19 +30,20 @@ public class NPC_Character : MonoBehaviour
     {
     }
 
-    bool DoesMatch(NPC_Character other) {
+    bool DoesMatch(NPC_Character other)
+    {
         return shapeSet == other.shapeSet && setElement != other.setElement;
     }
 
     public void OnTriggerEnter(Collider c)
     {
         NPC_Character other = c.gameObject.GetComponent<NPC_Character>();
-        if (other is not null && DoesMatch(other)) {
+        if (other is not null && DoesMatch(other))
+        {
             // if it's a match -- 
             // TODO: add points or whatever
             GameManager.AddScore(1);
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            StartCoroutine(Matched(other));
         }
     }
 
@@ -49,7 +51,7 @@ public class NPC_Character : MonoBehaviour
     {
         if (agent != null && agent.enabled)
         {
-            print("nav mesh disabled");
+            // print("nav mesh disabled");
             agent.ResetPath();
             agent.enabled = false;
         }
@@ -59,8 +61,20 @@ public class NPC_Character : MonoBehaviour
     {
         if (agent != null && !agent.enabled)
         {
-            print("nav mesh enabled");
+            // print("nav mesh enabled");
             agent.enabled = true;
         }
+    }
+
+    IEnumerator Matched(NPC_Character other)
+    {
+        // start particles
+        this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        print("particles");
+        GetComponent<Rigidbody>().isKinematic = true;
+        other.GetComponent<Rigidbody>().isKinematic = true;
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }
