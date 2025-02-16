@@ -70,6 +70,7 @@ public class NPC_Character : MonoBehaviour
         // start particles
         this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
         print("particles");
+        DisableNavMeshAgent();
         GetComponent<Rigidbody>().isKinematic = true;
         other.GetComponent<Rigidbody>().isKinematic = true;
         yield return new WaitForSeconds(2);
