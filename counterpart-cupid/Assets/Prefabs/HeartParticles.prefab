@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 8943774270412424569}
   - component: {fileID: 8791647182110754518}
   - component: {fileID: 4146671374313007136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HeartParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8943774270412424569
 Transform:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Spawning & Room Info")]
     public NPC_Character NPCPrefab;
+    [SerializeField] private GameObject[] NPCPrefabs;
     public Vector3 fieldMinPos;
     public Vector3 fieldMaxPos;
 
@@ -153,7 +154,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnNPC(Vector3 position, int shapeSet, int setElement, Sprite shapeSprite)
     {
-        NPC_Character npcObject = Instantiate(NPCPrefab, position, UnityEngine.Quaternion.identity);
+        GameObject npcObject = Instantiate(NPCPrefabs[Random.Range(0, NPCPrefabs.Length)], position, UnityEngine.Quaternion.identity);
         NPC_Character npc = npcObject.GetComponent<NPC_Character>();
 
         if (npc != null)

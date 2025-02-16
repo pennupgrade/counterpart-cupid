@@ -51,7 +51,7 @@ public class CharacterPuller : MonoBehaviour
                 // disable ai agent
                 heldCharacter.GetComponent<NPC_Character>().DisableNavMeshAgent();
 
-                print("pulling");
+                // print("pulling");
             }
         }
     }
