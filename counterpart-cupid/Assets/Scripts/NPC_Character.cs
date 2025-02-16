@@ -12,10 +12,12 @@ public class NPC_Character : MonoBehaviour
     [SerializeField] private int setElement;
     public Sprite shapeAttribute;
     [SerializeField] private GameObject attributeUI;
+    private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         if (shapeAttribute != null) {
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             attributeUI.GetComponent<SpriteRenderer>().sprite = shapeAttribute;
@@ -40,6 +42,25 @@ public class NPC_Character : MonoBehaviour
             GameManager.AddScore(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
+        }
+    }
+
+    public void DisableNavMeshAgent()
+    {
+        if (agent != null && agent.enabled)
+        {
+            print("nav mesh disabled");
+            agent.ResetPath();
+            agent.enabled = false;
+        }
+    }
+
+    public void EnableNavMeshAgent()
+    {
+        if (agent != null && !agent.enabled)
+        {
+            print("nav mesh enabled");
+            agent.enabled = true;
         }
     }
 }

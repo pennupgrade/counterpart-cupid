@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CharacterPush : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class CharacterPush : MonoBehaviour
         if (Input.GetKeyDown(pushKey) && characterPuller.heldCharacter != null)
         {
             TryPushCharacter();
+            // enable ai agent
+            StartCoroutine(WaitToWander(characterPuller.heldCharacter));
         }
     }
 
@@ -57,5 +60,15 @@ public class CharacterPush : MonoBehaviour
         // Clear the held character
         characterPuller.heldCharacter = null;
         characterPuller.isPulling = false;
+    }
+    
+    IEnumerator WaitToWander(GameObject prevHeldCharacter)
+    {
+        yield return new WaitForSeconds(3);
+        if (prevHeldCharacter)
+        {
+            // enable ai character
+            prevHeldCharacter.GetComponent<NPC_Character>().EnableNavMeshAgent();
+        }
     }
 }

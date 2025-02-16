@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CharacterPuller : MonoBehaviour
 {
@@ -39,13 +40,18 @@ public class CharacterPuller : MonoBehaviour
             GameObject target = hit.collider.gameObject;
 
             if (target.CompareTag("Character")) // Make sure characters have this tag
-            {                
+            {
                 heldCharacter = target;
                 isPulling = true;
 
                 // Disable physics so the object moves smoothly
                 Rigidbody rb = heldCharacter.GetComponent<Rigidbody>();
                 if (rb != null) rb.isKinematic = true;
+
+                // disable ai agent
+                heldCharacter.GetComponent<NPC_Character>().DisableNavMeshAgent();
+
+                print("pulling");
             }
         }
     }
@@ -70,8 +76,19 @@ public class CharacterPuller : MonoBehaviour
             Rigidbody rb = heldCharacter.GetComponent<Rigidbody>();
             if (rb != null) rb.isKinematic = false;
 
+            StartCoroutine(WaitToWander(heldCharacter));
             heldCharacter = null;
             isPulling = false;
+        }
+    }
+
+    IEnumerator WaitToWander(GameObject prevHeldCharacter)
+    {
+        yield return new WaitForSeconds(3);
+        if (!heldCharacter && heldCharacter != prevHeldCharacter)
+        {
+            // enable ai character
+            prevHeldCharacter.GetComponent<NPC_Character>().EnableNavMeshAgent();
         }
     }
 }

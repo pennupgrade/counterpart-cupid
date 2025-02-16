@@ -1,39 +1,47 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class NPCWander : MonoBehaviour
 {
     public float wanderRange = 10f;  // How far the NPC can wander
-    public float wanderSpeed = 2f;   // Speed at which the NPC moves
     public float waitTime = 2f;      // Time to wait at a destination
-    public float rotationSpeed = 2f; // Rotation speed to face destination
 
+    private NavMeshAgent agent;
     private Vector3 targetPosition;
     private bool isWandering = false;
 
-    private void Start()
+    void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         StartCoroutine(Wander());
     }
 
-    private void Update()
+    void Update()
     {
-        if (isWandering)
-        {
-            // Rotate smoothly towards the target position
-            Vector3 direction = (targetPosition - transform.position).normalized;
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            // Move towards the target position
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, wanderSpeed * Time.deltaTime);
+        // Ensure NavMeshAgent is enabled and placed on a valid NavMesh before checking its distance
+        if (agent.enabled && IsOnNavMesh())
+        {
+            // If NPC has reached the target and is idle, wait at the destination before moving again
+            if (!isWandering && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+            {
+                StartCoroutine(Wander());  // Start wandering again
+            }
         }
+    }
+
+    // Check if the NPC is on a valid NavMesh
+    private bool IsOnNavMesh()
+    {
+        NavMeshHit hit;
+        return NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas);
     }
 
     // Coroutine to make NPC wander between random points
     private IEnumerator Wander()
     {
-        while (true)
+        while (agent.enabled)
         {
             // Choose a random target position within the wander range
             targetPosition = new Vector3(
@@ -42,16 +50,17 @@ public class NPCWander : MonoBehaviour
                 transform.position.z + Random.Range(-wanderRange, wanderRange)
             );
 
-            // Move towards the target
+            // Set the agent's destination to the target position
+            agent.SetDestination(targetPosition);
             isWandering = true;
 
             // Wait until the NPC reaches the destination
-            while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+            while (agent.enabled && (agent.pathPending || agent.remainingDistance > agent.stoppingDistance))
             {
                 yield return null;
             }
 
-            // Stop wandering and wait at the destination for a while
+            // NPC has arrived at the destination, wait before wandering again
             isWandering = false;
             yield return new WaitForSeconds(waitTime);
         }
