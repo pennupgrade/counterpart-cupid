@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -208,6 +208,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81524915e5153dd4f95c2f33aa28c2b0, type: 3}
+--- !u!1001 &183706765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 644856567}
+    m_Modifications:
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.684
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7248629
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.054779373
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6865584
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.014517454
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -87.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946002580442085278, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_Name
+      value: GrappleGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
 --- !u!1 &193226293
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +385,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 452562478988281103, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
   m_PrefabInstance: {fileID: 320844108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &644856567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8829081562790665248, guid: fdb71bf5c9fd02b7098c70c6ceb18c6f, type: 3}
+  m_PrefabInstance: {fileID: 818432773}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
@@ -542,7 +604,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8829081562790665248, guid: fdb71bf5c9fd02b7098c70c6ceb18c6f, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1402695309}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb71bf5c9fd02b7098c70c6ceb18c6f, type: 3}
 --- !u!1 &879639964
@@ -715,6 +780,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1402695309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2841058019305018792, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+  m_PrefabInstance: {fileID: 183706765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1639461163
 PrefabInstance:
   m_ObjectHideFlags: 0
