@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 1610416563483002050, guid: 81524915e5153dd4f95c2f33aa28c2b0, type: 3}
       propertyPath: m_Name
       value: Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570735802886973156, guid: 81524915e5153dd4f95c2f33aa28c2b0, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6034008859988245751, guid: 81524915e5153dd4f95c2f33aa28c2b0, type: 3}
       propertyPath: m_NavMeshData
@@ -256,6 +260,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.534
       objectReference: {fileID: 0}
+    - target: {fileID: 3242741105120261885, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242741105120261885, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d4329043198bc4823826633473322ded, type: 2}
     - target: {fileID: 5946002580442085278, guid: 7f16af2204913b4d688507f92c9d4470, type: 3}
       propertyPath: m_Name
       value: GrappleGun
