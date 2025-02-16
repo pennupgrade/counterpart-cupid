@@ -48,6 +48,9 @@ MonoBehaviour:
   timer: 0
   ScoreText: {fileID: 244402565939389891}
   TimerText: {fileID: 4200552343394327786}
+  NPCPrefab: {fileID: 4515486853757078160, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+  fieldMinPos: {x: 0, y: 0, z: 0}
+  fieldMaxPos: {x: 0, y: 0, z: 0}
 --- !u!1 &227964825496550113
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +411,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

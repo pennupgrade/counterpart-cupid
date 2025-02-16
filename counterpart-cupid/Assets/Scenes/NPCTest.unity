@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -557,6 +557,7 @@ PrefabInstance:
       propertyPath: timer
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 8920579239206531313, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -564,6 +565,35 @@ PrefabInstance:
     - target: {fileID: 8920579239206531313, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
       propertyPath: m_ScreenMatchMode
       value: 1
+=======
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: NPCPrefab
+      value: 
+      objectReference: {fileID: 4515486853757078160, guid: 79a8d425c96037b67ac46c5ddb115ec2, type: 3}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMaxPos.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMaxPos.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMaxPos.z
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMinPos.x
+      value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMinPos.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026136750001538595, guid: 8b7af28732f3f345c82df393623ef135, type: 3}
+      propertyPath: fieldMinPos.z
+      value: -70
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
