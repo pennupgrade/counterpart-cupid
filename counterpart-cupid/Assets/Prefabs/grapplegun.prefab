@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: grapplegun
       objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: be3258d2df53dc14f8f0ce3a3fb1771a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: be3258d2df53dc14f8f0ce3a3fb1771a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.066
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

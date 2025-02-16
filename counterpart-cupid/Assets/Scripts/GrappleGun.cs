@@ -6,7 +6,7 @@ using UnityEngine;
 public class GrappleGun : MonoBehaviour
 {
     const KeyCode useButton = KeyCode.Mouse1;
-    const float FORCE_AMOUNT = 20;
+    const float FORCE_AMOUNT = 40;
     const float CLOSE_ENOUGH = 1;
 
     private bool isHolding = false;
